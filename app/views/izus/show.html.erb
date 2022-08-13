@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @izu %>
+
+<div>
+  <%= link_to "Edit this izu", edit_izu_path(@izu) %> |
+  <%= link_to "Back to izus", izus_path %>
+
+  <%= button_to "Destroy this izu", @izu, method: :delete %>
+</div>

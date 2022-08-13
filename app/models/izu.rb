@@ -1,0 +1,2 @@
+class Izu < ApplicationRecord
+end
