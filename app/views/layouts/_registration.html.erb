@@ -1,0 +1,54 @@
+		<ul class="nav navbar-nav navbar-right">			
+			<% if current_user %>
+			 <%= link_to('Logout', destroy_user_session_path, 'data-turbo-method': :delete, class: "btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1")  %>
+			 <% else %>
+			 <li>
+    
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Login</a>
+				<ul class="dropdown-menu form-wrapper">					
+					<li><%= form_for(:user, :url => session_path(:user)) do |f| %>
+						<form  method="post">
+							<div class="form-group">
+								<%= f.text_field :email, :placeholder => "Email", class:"form-control" %>
+							</div>
+							<div class="form-group">
+								 <%= f.password_field :password, :placeholder => "Password", class:"form-control"%>
+							</div>
+							<%= f.submit 'Login', class:"btn btn-primary btn-block", class:"form-control" %>
+							<div class="form-footer">
+								<a href="#">Forgot Your password?</a>
+							</div>
+						</form>
+						<% end %>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+                 <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign up</a>
+				<ul class="dropdown-menu form-wrapper">					
+					<li><%= form_for(:user, :url => registration_path(:user)) do |f| %>
+						<form action="/examples/actions/confirmation.php" method="post">
+							<p class="hint-text">Fill in this form to create your account!</p>
+							<div class="form-group">
+								<%= f.text_field :email, :placeholder => "Email", class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<%= f.password_field :password, :placeholder => "Password", class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<%= f.password_field :password_confirmation, :placeholder => "Password confirmation", class:"form-control"  %>
+							</div>
+							<div class="form-group">
+								<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+							</div>
+							<%= f.submit "Sign up", data: {turbo: false}, class: "btn btn-primary btn-block" %>
+						</form>
+						<% end %>
+					</li>
+					
+					<% end %>
+					
+				</ul>
+			</li>
+		</ul>
