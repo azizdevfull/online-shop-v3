@@ -74,7 +74,8 @@ body {
     background: #31bfb1;
 }
 .navbar .navbar-right li:first-child a {
-    padding-right: 30px;
+    margin-right: -128px;
+    /* padding-right: 00000; */
 }
 .navbar ul li i {
     font-size: 18px;
