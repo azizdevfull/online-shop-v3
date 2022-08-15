@@ -1,5 +1,10 @@
 <% if user_signed_in? %>
-  <h1><%= current_user.email %></h1>
+      <ul>
+        <li><%= link_to 'English', root_path(locale: :en) %></li>
+        <li><%= link_to 'Русский', root_path(locale: :uz) %></li>
+      </ul>
+ <%= t 'welcome' %> <h3><%= current_user.email %></h3>
+ <%= t 'services_html' %>
 <% else %>
   
 <% end %>
