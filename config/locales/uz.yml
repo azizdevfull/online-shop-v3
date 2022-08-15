@@ -1,3 +1,5 @@
 uz:
   welcome: "Hush Kelibsiz!"
-  services_html: "<p>Mening Dokonim</p>"
+  services_html: "<h3>Mening Dokonim</h3>"
+  logout: "Chiqish"
+  search: "Izlash shu erda..."
