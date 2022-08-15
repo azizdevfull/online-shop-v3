@@ -6,6 +6,9 @@
  <%= t 'welcome' %> <h3><%= current_user.email %></h3>
  <%= t 'services_html' %>
 <% else %>
-  
+        <ul>
+        <li><%= link_to 'English', root_path(locale: :en) %></li>
+        <li><%= link_to 'Uzbek', root_path(locale: :uz) %></li>
+      </ul>
 <% end %>
 
